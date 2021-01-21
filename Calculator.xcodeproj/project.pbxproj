@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		FA58339125B8744500F6C767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58339025B8744500F6C767 /* AppDelegate.swift */; };
 		FA58339325B8744500F6C767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58339225B8744500F6C767 /* SceneDelegate.swift */; };
-		FA58339525B8744500F6C767 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58339425B8744500F6C767 /* ViewController.swift */; };
 		FA58339825B8744500F6C767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA58339625B8744500F6C767 /* Main.storyboard */; };
 		FA58339B25B8744500F6C767 /* Calculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA58339925B8744500F6C767 /* Calculator.xcdatamodeld */; };
 		FA58339D25B8744600F6C767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA58339C25B8744600F6C767 /* Assets.xcassets */; };
 		FA5833A025B8744600F6C767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA58339E25B8744600F6C767 /* LaunchScreen.storyboard */; };
 		FA5833AB25B8744700F6C767 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5833AA25B8744700F6C767 /* CalculatorTests.swift */; };
 		FA5833B625B8744700F6C767 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5833B525B8744700F6C767 /* CalculatorUITests.swift */; };
+		FA5833C825B8822E00F6C767 /* ButtonForCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5833C725B8822E00F6C767 /* ButtonForCalc.swift */; };
+		FA5833CE25B8846300F6C767 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5833CD25B8846300F6C767 /* CalculatorViewController.swift */; };
+		FA98841925B9E60000F551B9 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5833CD25B8846300F6C767 /* CalculatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,6 @@
 		FA58338D25B8744500F6C767 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA58339025B8744500F6C767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA58339225B8744500F6C767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA58339425B8744500F6C767 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA58339725B8744500F6C767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA58339A25B8744500F6C767 /* Calculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calculator.xcdatamodel; sourceTree = "<group>"; };
 		FA58339C25B8744600F6C767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +52,8 @@
 		FA5833B125B8744700F6C767 /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5833B525B8744700F6C767 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		FA5833B725B8744700F6C767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA5833C725B8822E00F6C767 /* ButtonForCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonForCalc.swift; sourceTree = "<group>"; };
+		FA5833CD25B8846300F6C767 /* CalculatorViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +104,10 @@
 		FA58338F25B8744500F6C767 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				FA5833CC25B8843E00F6C767 /* Controllers */,
+				FA5833C625B8820500F6C767 /* costum stuff */,
 				FA58339025B8744500F6C767 /* AppDelegate.swift */,
 				FA58339225B8744500F6C767 /* SceneDelegate.swift */,
-				FA58339425B8744500F6C767 /* ViewController.swift */,
 				FA58339625B8744500F6C767 /* Main.storyboard */,
 				FA58339C25B8744600F6C767 /* Assets.xcassets */,
 				FA58339E25B8744600F6C767 /* LaunchScreen.storyboard */,
@@ -129,6 +133,22 @@
 				FA5833B725B8744700F6C767 /* Info.plist */,
 			);
 			path = CalculatorUITests;
+			sourceTree = "<group>";
+		};
+		FA5833C625B8820500F6C767 /* costum stuff */ = {
+			isa = PBXGroup;
+			children = (
+				FA5833C725B8822E00F6C767 /* ButtonForCalc.swift */,
+			);
+			path = "costum stuff";
+			sourceTree = "<group>";
+		};
+		FA5833CC25B8843E00F6C767 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA5833CD25B8846300F6C767 /* CalculatorViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA58339525B8744500F6C767 /* ViewController.swift in Sources */,
+				FA5833C825B8822E00F6C767 /* ButtonForCalc.swift in Sources */,
 				FA58339B25B8744500F6C767 /* Calculator.xcdatamodeld in Sources */,
 				FA58339125B8744500F6C767 /* AppDelegate.swift in Sources */,
+				FA5833CE25B8846300F6C767 /* CalculatorViewController.swift in Sources */,
 				FA58339325B8744500F6C767 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA98841925B9E60000F551B9 /* CalculatorViewController.swift in Sources */,
 				FA5833B625B8744700F6C767 /* CalculatorUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

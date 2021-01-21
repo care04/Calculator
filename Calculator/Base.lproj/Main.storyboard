@@ -1,24 +1,449 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="xs5-6F-He7">
+                                <rect key="frame" x="0.0" y="280" width="1366" height="744"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tmv-UK-Fu8">
+                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="144"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSS-X5-XOe" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="1Da-jV-A8a"/>
+                                                    <constraint firstAttribute="width" secondItem="fSS-X5-XOe" secondAttribute="height" multiplier="1:1" id="60s-S7-mWK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="C">
+                                                    <color key="titleColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="1Da-jV-A8a"/>
+                                                        <exclude reference="60s-S7-mWK"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="function:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cec-f4-Wio"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxO-3V-YeT" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="343" y="0.0" width="337.5" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="+/-">
+                                                    <color key="titleColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="function:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOF-uG-TZn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzG-XP-khs" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="685.5" y="0.0" width="338" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="d">
+                                                    <color key="titleColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="function:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGU-GJ-rRA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ1-X1-yMa" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="1028.5" y="0.0" width="337.5" height="144"/>
+                                                <color key="backgroundColor" red="0.58731389507680032" green="0.88225481297201436" blue="0.88968664409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="function:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r7M-gD-z7h"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jSh-UN-M65">
+                                        <rect key="frame" x="0.0" y="150" width="1366" height="144"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIF-hA-Lu6" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="LIF-hA-Lu6" secondAttribute="height" multiplier="1:1" id="Ibh-dm-f8s"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="isK-RF-SV0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Ibh-dm-f8s"/>
+                                                        <exclude reference="isK-RF-SV0"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iji-18-mSA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXL-qB-JKv" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="343" y="0.0" width="337.5" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3i5-IK-Ogf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Div-rQ-Sds" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="685.5" y="0.0" width="338" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S7d-tU-DiA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeA-u6-Xud" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="1028.5" y="0.0" width="337.5" height="144"/>
+                                                <color key="backgroundColor" red="0.58731389509999998" green="0.88225481299999997" blue="0.88968664409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="x">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="function:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EJ8-Y8-I7z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="p36-si-w8X">
+                                        <rect key="frame" x="0.0" y="300" width="1366" height="144"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGr-oW-1aL" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="CGr-oW-1aL" secondAttribute="height" multiplier="1:1" id="795-83-fBP"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="tdS-ky-ZO5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="795-83-fBP"/>
+                                                        <exclude reference="tdS-ky-ZO5"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgL-JZ-JPX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfE-tc-7sf" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="343" y="0.0" width="337.5" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8V-gx-jZn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w74-xZ-roe" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="685.5" y="0.0" width="338" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc5-bj-e3o"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4M-ep-IS2" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="1028.5" y="0.0" width="337.5" height="144"/>
+                                                <color key="backgroundColor" red="0.58731389509999998" green="0.88225481299999997" blue="0.88968664409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="-">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="function:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q6p-3m-j6h"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Sr7-2X-hWY">
+                                        <rect key="frame" x="0.0" y="450" width="1366" height="144"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tp-Hn-A5v" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Q9E-OJ-XGD"/>
+                                                    <constraint firstAttribute="width" secondItem="6tp-Hn-A5v" secondAttribute="height" multiplier="1:1" id="sKW-gB-wI0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Q9E-OJ-XGD"/>
+                                                        <exclude reference="sKW-gB-wI0"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BqL-Hw-etz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLt-xR-HOd" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="343" y="0.0" width="337.5" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ivr-c5-ZuJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAw-dY-VjA" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="685.5" y="0.0" width="338" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TjM-AW-li2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijo-9K-P0E" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="1028.5" y="0.0" width="337.5" height="144"/>
+                                                <color key="backgroundColor" red="0.58731389509999998" green="0.88225481299999997" blue="0.88968664409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="function:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fV-JQ-1Ap"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XW3-DH-XmP">
+                                        <rect key="frame" x="0.0" y="600" width="1366" height="144"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F41-3Z-Mmb" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="680.5" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="F41-3Z-Mmb" secondAttribute="height" multiplier="2:1" id="5B3-On-f6x"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="184" id="pld-Do-o8x"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="5B3-On-f6x"/>
+                                                        <exclude reference="pld-Do-o8x"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="Numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8w-u7-SAY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czn-Mk-nNZ" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="685.5" y="0.0" width="338" height="144"/>
+                                                <color key="backgroundColor" red="0.5715774898" green="0.78041909030000001" blue="0.86864164259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="czn-Mk-nNZ" secondAttribute="height" multiplier="1:1" id="1ir-UM-Yya"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title=".">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="1ir-UM-Yya"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="function:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wL1-cU-nTQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fS-pY-bjx" customClass="ButtonForCalc" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="1028.5" y="0.0" width="337.5" height="144"/>
+                                                <color key="backgroundColor" red="0.58731389509999998" green="0.88225481299999997" blue="0.88968664409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="0fS-pY-bjx" secondAttribute="height" multiplier="1:1" id="0lR-gt-Dhc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="0lR-gt-Dhc"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="function:" destination="BYZ-38-t0r" eventType="touchUpInside" id="msG-Mb-ZMx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="F41-3Z-Mmb" firstAttribute="trailing" secondItem="hLt-xR-HOd" secondAttribute="trailing" id="s01-89-zwI"/>
+                                    <constraint firstItem="czn-Mk-nNZ" firstAttribute="trailing" secondItem="VAw-dY-VjA" secondAttribute="trailing" id="sDB-3s-rPf"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wO2-XZ-YtI">
+                                <rect key="frame" x="16" y="120" width="1334" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="kgL-CE-fol"/>
+                                    <constraint firstAttribute="height" constant="140" id="wSu-V4-YTa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="52"/>
+                                <color key="textColor" red="0.27281749249999998" green="0.27286314960000002" blue="0.27281126379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wSu-V4-YTa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="120"/>
+                                    <mask key="constraints">
+                                        <exclude reference="kgL-CE-fol"/>
+                                        <include reference="wSu-V4-YTa"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.33521824862475752" green="0.44659627640202393" blue="0.49246081183938417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xs5-6F-He7" firstAttribute="top" secondItem="wO2-XZ-YtI" secondAttribute="bottom" constant="20" id="7WQ-it-5Pd"/>
+                            <constraint firstItem="wO2-XZ-YtI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NGq-ct-kW4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wO2-XZ-YtI" secondAttribute="trailing" constant="16" id="Zcr-ry-IO0"/>
+                            <constraint firstAttribute="bottom" secondItem="xs5-6F-He7" secondAttribute="bottom" id="bIL-49-4kO"/>
+                            <constraint firstItem="wO2-XZ-YtI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="dRx-Uv-UFu"/>
+                            <constraint firstItem="xs5-6F-He7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="m2e-XD-lhu"/>
+                            <constraint firstAttribute="trailing" secondItem="xs5-6F-He7" secondAttribute="trailing" id="sg9-P8-kzU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dRx-Uv-UFu"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="dRx-Uv-UFu"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="CalcLabel" destination="wO2-XZ-YtI" id="ykz-l5-9Dz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="112.59259259259258" y="117.77777777777777"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0fS-pY-bjx">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="6tp-Hn-A5v">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="CGr-oW-1aL">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="Div-rQ-Sds">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="F41-3Z-Mmb">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="LIF-hA-Lu6">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="MfE-tc-7sf">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="VAw-dY-VjA">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="YXL-qB-JKv">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="cQ1-X1-yMa">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="czn-Mk-nNZ">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="fSS-X5-XOe">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="hLt-xR-HOd">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="ijo-9K-P0E">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="kxO-3V-YeT">
+            <size key="intrinsicContentSize" width="73" height="52"/>
+        </designable>
+        <designable name="kzG-XP-khs">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="s4M-ep-IS2">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="w74-xZ-roe">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+        <designable name="yeA-u6-Xud">
+            <size key="intrinsicContentSize" width="30" height="52"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
